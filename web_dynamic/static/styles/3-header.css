@@ -16,7 +16,8 @@ header #api_status {
     background: #cccccc;
     width: 40px;
     position: absolute;
-    top: 50%;
+    top: 25%;
+    height: 40px;
 }
 header #api_status.available {
     background: #ff545f;
