@@ -21,6 +21,7 @@ $(document).ready(function () {
     if (checkedAmenityText === '') {
       $('div.amenities h4').html('&nbsp;');
     } else {
+      if (checkedAmenityText.length > 32) { checkedAmenityText = checkedAmenityText.slice(0, 29) + '...'; }
       $('div.amenities h4').text(checkedAmenityText);
     }
   });
