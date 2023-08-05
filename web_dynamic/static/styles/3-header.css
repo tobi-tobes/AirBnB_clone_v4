@@ -3,6 +3,7 @@ header {
     height: 70px;
     width: 100%;
     border-bottom: 1px solid #CCCCCC;
+    position: relative;
 }
 header .logo {
     background: url("../images/logo.png") no-repeat;
@@ -14,7 +15,8 @@ header #api_status {
     border-radius: 50%;
     background: #cccccc;
     width: 40px;
-    margin-top: 50%;
+    position: absolute;
+    top: 50%;
 }
 header #api_status.available {
     background: #ff545f;
