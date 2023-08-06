@@ -53,18 +53,19 @@ $(document).ready(function () {
     }
   });
 
-  $('button').on('click', function() {
+  $('button').on('click', function () {
     $.ajax({
       type: 'POST',
       url: 'http://0.0.0.0:5001/api/v1/places_search/',
-      data: JSON.stringify({"amenities": Object.keys(checkedAmenities)}),
+      data: JSON.stringify({ amenities: Object.keys(checkedAmenities) }),
       contentType: 'application/json',
       success: function (places) {
-	for (const id in places) {
+        $('.places').empty();
+        for (const id in places) {
           const place = places[id];
-	  const article = '<article><div class="title_box"><h2>' + place.name + '</h2><div class="price_by_night">$' + place.price_by_night + '</div></div><div class="information"><div class="max_guest">' + displayProperLabelByCount('Guest', place.max_guest) + '</div><div class="number_rooms">' + displayProperLabelByCount('Bedroom', place.number_rooms) + '</div><div class="number_bathrooms">' + displayProperLabelByCount('Bathroom', place.number_bathrooms) + '</div></div><div class="description">' + place.description + '</div></article>';
-	  $('.places').append(article);
-	}
+          const article = '<article><div class="title_box"><h2>' + place.name + '</h2><div class="price_by_night">$' + place.price_by_night + '</div></div><div class="information"><div class="max_guest">' + displayProperLabelByCount('Guest', place.max_guest) + '</div><div class="number_rooms">' + displayProperLabelByCount('Bedroom', place.number_rooms) + '</div><div class="number_bathrooms">' + displayProperLabelByCount('Bathroom', place.number_bathrooms) + '</div></div><div class="description">' + place.description + '</div></article>';
+          $('.places').append(article);
+        }
       }
     });
   });
