@@ -31,10 +31,10 @@ $(document).ready(function () {
     url: 'http://0.0.0.0:5001/api/v1/status/',
     success: function (resp) {
       const stat = resp.status;
-      if(stat === 'OK') {
+      if (stat === 'OK') {
         $('div#api_status').addClass('available');
       } else {
-	$('div#api_status').removeClass('available');
+        $('div#api_status').removeClass('available');
       }
     }
   });
